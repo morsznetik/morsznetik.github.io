@@ -1,0 +1,117 @@
+:root {
+    --light-accent-color: #c2f9fe;
+    --accent-color: #99f5fd;
+    --dark-accent-color: #8adde4;
+    --darker-accent-color: #7ac4ca;
+    --dark1-background: #202021;
+    --darker1-background: #171616;
+    --text-color: #f5f5f5;
+    --profile-picture-glow: #fda199;
+    --profile-picture-glow2: #ffd9d6;
+}
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-optical-sizing: auto;
+    background-color: var(--dark1-background);
+    color: var(--text-color);
+}
+header {
+    background-color: var(--darker1-background);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    user-select: none; /* Prevent text selection */
+}
+header h1 {
+    margin: 0;
+    font-weight: 900;
+}
+.line {
+    width: 100%;
+    height: 1px;
+    background-color: #222; /* Grayish color */
+    margin: 1rem 0; /* Adjust as needed */
+}
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--darker1-background);
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 1rem;
+    border: 3px solid var(--profile-picture-glow);
+    box-shadow: 0 0 8px var(--profile-picture-glow);
+    user-select: none;
+}
+h2 {
+    text-align: center;
+    user-select: none; /* Prevent text selection */
+}
+
+h2 > span {
+    color: var(--accent-color);
+    text-shadow: 0 0 8px var(--accent-color);
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block; /* Ensures that the container wraps around the text */
+}
+
+h2 > span:hover {
+    transform: scale(0.95);
+    color: var(--dark-accent-color);
+}
+
+h2 > span:active {
+    color: var(--light-accent-color);
+    text-shadow: 0 0 8px var(--light-accent-color);
+}
+.pop-animation {
+    animation: pop 0.3s cubic-bezier(0.42, 0, 0.58, 1);;
+}
+@keyframes pop {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.15); }
+    50% { transform: scale(1); }
+    75% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+p {
+    line-height: 1.6;
+    text-align: justify;
+}
+.pronouns {
+    text-align: center;
+    color: #777; /* Grayish color */
+    margin-top: 0.5rem; /* Adjust as needed */
+    font-size: 0.8rem; /* Adjust as needed */
+    list-style: none; /* Remove default list styles */
+    padding: 0; /* Remove default list padding */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    user-select: none; /* Prevent text selection */
+}
+.pronouns li:not(:last-child) {
+    margin-right: 0.5rem; /* Adjust as needed */
+}
+.special-femboy-text {
+    background: linear-gradient(75deg, var(--profile-picture-glow), var(--profile-picture-glow2)); /* Replace #7873f5 with your secondary color if desired */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    font-weight: bold; /* Ensures the gradient is more visible */
+}
+.special-love-text {
+    background: linear-gradient(75deg, #ff4033, #fe8e86); /* Replace #7873f5 with your secondary color if desired */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline;
+}
