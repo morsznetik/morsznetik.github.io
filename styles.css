@@ -52,24 +52,24 @@ header h1 {
     box-shadow: 0 0 8px var(--profile-picture-glow);
     user-select: none;
 }
-h2 {
+#about-me {
     text-align: center;
     user-select: none; /* Prevent text selection */
 }
 
-h2 > span {
+#about-me > span {
     color: var(--accent-color);
     text-shadow: 0 0 8px var(--accent-color);
     transition: transform 0.3s ease, color 0.3s ease;
     display: inline-block; /* Ensures that the container wraps around the text */
 }
 
-h2 > span:hover {
+#about-me > span:hover {
     transform: scale(0.95);
     color: var(--dark-accent-color);
 }
 
-h2 > span:active {
+#about-me > span:active {
     color: var(--light-accent-color);
     text-shadow: 0 0 8px var(--light-accent-color);
 }
@@ -109,9 +109,17 @@ p {
     display: inline-block;
     font-weight: bold; /* Ensures the gradient is more visible */
 }
+.quote-of-the-day {
+    text-align: center;
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+    color: #999; /* Adjust color as needed */
+}
 .special-love-text {
-    background: linear-gradient(75deg, #ff4033, #fe8e86); /* Replace #7873f5 with your secondary color if desired */
+    background: linear-gradient(180deg, #f97a7d, #fba7a8); /* Gradient color */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    display: inline;
+    font-weight: bold;
 }
+
