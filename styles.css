@@ -41,6 +41,7 @@ header h1 {
     background-color: var(--darker1-background);
     border-radius: 16px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
 }
 .profile-pic {
     width: 150px;
@@ -106,6 +107,7 @@ p {
     padding: 6px;
     padding-bottom: 2px;
     padding-top: 6px;
+    user-select: none;
 }
 .badge img {
     height: 26px; /* Adjust size as needed */
@@ -113,5 +115,21 @@ p {
     margin: 0 4px; /* Adjust spacing between badges */
     user-select: none;
 }
-
-
+.trans-flag-text {
+    background: linear-gradient(
+        180deg,
+        #55CDFC 0%,    /* Light blue */
+        #55CDFC 30%,
+        #F7A8B8 30%,   /* Pink */
+        #F7A8B8 45%,
+        #FFFFFF 45%,   /* White */
+        #FFFFFF 55%,
+        #F7A8B8 55%,   /* Pink */
+        #F7A8B8 70%,
+        #55CDFC 70%,   /* Light blue */
+        #55CDFC 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
