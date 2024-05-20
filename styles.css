@@ -52,37 +52,6 @@ header h1 {
     box-shadow: 0 0 8px var(--profile-picture-glow);
     user-select: none;
 }
-#about-me {
-    text-align: center;
-    user-select: none; /* Prevent text selection */
-}
-
-#about-me > span {
-    color: var(--accent-color);
-    text-shadow: 0 0 8px var(--accent-color);
-    transition: transform 0.3s ease, color 0.3s ease;
-    display: inline-block; /* Ensures that the container wraps around the text */
-}
-
-#about-me > span:hover {
-    transform: scale(0.95);
-    color: var(--dark-accent-color);
-}
-
-#about-me > span:active {
-    color: var(--light-accent-color);
-    text-shadow: 0 0 8px var(--light-accent-color);
-}
-.pop-animation {
-    animation: pop 0.3s cubic-bezier(0.42, 0, 0.58, 1);;
-}
-@keyframes pop {
-    0% { transform: scale(1); }
-    25% { transform: scale(1.15); }
-    50% { transform: scale(1); }
-    75% { transform: scale(0.95); }
-    100% { transform: scale(1); }
-}
 p {
     line-height: 1.6;
     text-align: justify;
@@ -103,7 +72,7 @@ p {
     margin-right: 0.5rem; /* Adjust as needed */
 }
 .special-femboy-text {
-    background: linear-gradient(75deg, var(--profile-picture-glow), var(--profile-picture-glow2)); /* Replace #7873f5 with your secondary color if desired */
+    background: linear-gradient(75deg, var(--profile-picture-glow), var(--profile-picture-glow2));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
@@ -115,11 +84,34 @@ p {
     font-style: italic;
     margin-bottom: 1rem;
     color: #999; /* Adjust color as needed */
+    text-shadow: 0 0 10px #000;
 }
 .special-love-text {
-    background: linear-gradient(180deg, #f97a7d, #fba7a8); /* Gradient color */
+    background: linear-gradient(75deg, #f97a7d, #fba7a8);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: bold;
+    text-shadow: 0 0 10px #f97a7d; /* Adjust the color and blur radius as needed */
 }
+
+.badge {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.badge {
+    max-width: fit-content;
+    margin-inline: auto;
+    background-color: var(--dark1-background); /* Background color */
+    border-radius: 10px; /* Rounded border */
+    padding: 6px;
+    padding-bottom: 2px;
+    padding-top: 6px;
+}
+.badge img {
+    height: 26px; /* Adjust size as needed */
+    weight: auto;
+    margin: 0 4px; /* Adjust spacing between badges */
+    user-select: none;
+}
+
 
