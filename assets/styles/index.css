@@ -177,4 +177,10 @@ p {
     font-family: monospace;
     font-size: 18px;
 }
+.dyna-badges a, .dyna-badges img {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+}
 
