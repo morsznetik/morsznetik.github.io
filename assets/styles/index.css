@@ -29,6 +29,15 @@ header {
     padding: 1rem 0;
     user-select: none; /* Prevent text selection */
 }
+.made-with-text {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-style: italic;
+    padding: 0 1em; /* Use relative units */
+    font-size: 0.8rem;
+}
 header h1 {
     margin: 0 auto;
     font-weight: 900;
