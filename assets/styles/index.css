@@ -35,6 +35,7 @@ header {
     font-style: italic;
     padding: 0 1em; /* Use relative units */
     font-size: 0.8rem;
+    background: var(--dark1-background);
 }
 header h1 {
     margin: 0 auto;
