@@ -11,6 +11,7 @@
 }
 body {
     margin: 0;
+    height: 100vh;
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-optical-sizing: auto;
@@ -42,6 +43,12 @@ header h1 {
     border-radius: 16px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: relative;
+}
+.container-outline-glow {
+    border: 2px solid var(--profile-picture-glow);
+    box-shadow: 0 0 10px var(--profile-picture-glow),
+                0 0 20px var(--profile-picture-glow2);
+    z-index: -2;
 }
 .profile-pic {
     width: 150px;
@@ -99,7 +106,7 @@ p {
     text-align: center;
     margin-bottom: 1rem;
 }
-.badge {
+.badges {
     max-width: fit-content;
     margin-inline: auto;
     background-color: var(--dark1-background); /* Background color */
@@ -109,7 +116,7 @@ p {
     padding-top: 6px;
     user-select: none;
 }
-.badge img {
+.badges img {
     height: 26px; /* Adjust size as needed */
     weight: auto;
     margin: 0 4px; /* Adjust spacing between badges */
