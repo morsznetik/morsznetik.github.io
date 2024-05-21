@@ -7,7 +7,7 @@
     --darker-accent-color: #7ac4ca;
     --dark1-background: #202021;
     --darker1-background: #171616;
-    --text-color: #f5f5f5;
+    --text-color: #ffffff;
     --profile-picture-glow: #fda199;
     --profile-picture-glow2: #ffd9d6;
 }
@@ -15,8 +15,7 @@ body {
     margin: 0;
     height: 100vh;
     font-family: 'Mint Grotesk', sans-serif;
-    font-style: normal;
-    font-optical-sizing: auto;
+    font-weight: normal;
     background-color: var(--dark1-background);
     color: var(--text-color);
 }
@@ -27,7 +26,6 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
-    user-select: none; /* Prevent text selection */
 }
 .made-with-text {
     position: fixed;
@@ -40,7 +38,8 @@ header {
 }
 header h1 {
     margin: 0 auto;
-    font-weight: 900;
+    font-weight: normal;
+    user-select: none;
 }
 .line {
     width: 100%;
@@ -61,7 +60,6 @@ header h1 {
     border: 2px solid rgba(253, 161, 153, 0.6);
     box-shadow: 0 0 10px rgba(253, 161, 153, 0.6),
                 0 0 20px rgba(255, 217, 214, 0.2);
-    z-index: -2;
 }
 .profile-pic {
     width: 150px;
@@ -71,6 +69,9 @@ header h1 {
     margin: 0 auto 1rem;
     border: 3px solid var(--profile-picture-glow);
     box-shadow: 0 0 8px var(--profile-picture-glow);
+    user-select: none;
+}
+.profile-wrapper {
     user-select: none;
 }
 p {
@@ -87,10 +88,11 @@ p {
     display: flex; /* Use flexbox for alignment */
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
-    user-select: none; /* Prevent text selection */
+    user-select: none;
 }
 .pronouns li:not(:last-child) {
     margin-right: 0.5rem; /* Adjust as needed */
+    user-select: none;
 }
 .special-femboy-text {
     background: linear-gradient(75deg, var(--profile-picture-glow), var(--profile-picture-glow2));
@@ -118,6 +120,7 @@ p {
 .badge {
     text-align: center;
     margin-bottom: 1rem;
+    user-select: none;
 }
 .badges {
     max-width: fit-content;
@@ -153,3 +156,25 @@ p {
     -webkit-text-fill-color: transparent;
     font-weight: bold;
 }
+.center-text {
+    text-align: center;
+}
+.location-link:link, .location-link:visited, .location-link:hover, .location-link:active {
+    color: var(--text-color);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--profile-picture-glow);
+}
+.icon, .location-link, .timezone-display {
+    display: inline-block;
+    vertical-align: middle;
+}
+.location-link, .timezone-display {
+    position: relative;
+    padding-right: 4px
+}
+#cest-time {
+    position: relative;
+    font-family: monospace;
+    font-size: 18px;
+}
+
