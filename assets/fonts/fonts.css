@@ -1,0 +1,31 @@
+/* Regular */
+@font-face {
+    font-family: 'Mint Grotesk';
+    src: url('./MintGrotesk-Regular.otf') format('opentype'),
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Bold */
+@font-face {
+    font-family: 'Mint Grotesk';
+    src: url('./MintGrotesk-Bold.otf') format('opentype'),
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Bold italic */
+@font-face {
+    font-family: 'Mint Grotesk';
+    src: url('./MintGrotesk-BoldItalic.otf') format('opentype'),
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Italic */
+@font-face {
+    font-family: 'Mint Grotesk';
+    src: url('./MintGrotesk-Italic.otf') format('opentype'),
+    font-weight: normal;
+    font-style: italic;
+}
