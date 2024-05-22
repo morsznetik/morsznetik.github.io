@@ -23,6 +23,7 @@ body {
     color: var(--text-color);
 }
 
+
 /* Header Styles */
 header {
     background-color: var(--darker1-background);
@@ -215,4 +216,11 @@ p {
     padding: 0 1em;
     font-size: 0.8rem;
     background: var(--dark1-background);
+}
+
+@media (max-height: 900px) {  /* couldnt find a better way to do this, update when content gets longer lol */
+    .content-wrapper {
+        padding-bottom: 100px;
+    }
+
 }
