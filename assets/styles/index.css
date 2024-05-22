@@ -1,5 +1,6 @@
 @import url('../fonts/fonts.css');
 
+/* Define CSS Variables */
 :root {
     --light-accent-color: #c2f9fe;
     --accent-color: #99f5fd;
@@ -11,6 +12,8 @@
     --profile-picture-glow: #fda199;
     --profile-picture-glow2: #ffd9d6;
 }
+
+/* Global Styles */
 body {
     margin: 0;
     height: 100vh;
@@ -19,6 +22,8 @@ body {
     background-color: var(--dark1-background);
     color: var(--text-color);
 }
+
+/* Header Styles */
 header {
     background-color: var(--darker1-background);
     color: white;
@@ -27,27 +32,22 @@ header {
     align-items: center;
     padding: 1rem 0;
 }
-.made-with-text {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    font-style: italic;
-    padding: 0 1em; /* Use relative units */
-    font-size: 0.8rem;
-    background: var(--dark1-background);
-}
+
 header h1 {
     margin: 0 auto;
     font-weight: normal;
     user-select: none;
 }
+
+/* Line Separator */
 .line {
     width: 100%;
     height: 1px;
-    background-color: #222; /* Grayish color */
-    margin: 1rem 0; /* Adjust as needed */
+    background-color: #222;
+    margin: 1rem 0;
 }
+
+/* Container Styles */
 .container {
     max-width: 800px;
     margin: 2rem auto;
@@ -57,11 +57,14 @@ header h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: relative;
 }
+
 .container-outline-glow {
     border: 2px solid rgba(253, 161, 153, 0.6);
     box-shadow: 0 0 10px rgba(253, 161, 153, 0.6),
                 0 0 20px rgba(255, 217, 214, 0.2);
 }
+
+/* Profile Picture Styles */
 .profile-pic {
     width: 150px;
     height: 150px;
@@ -72,112 +75,129 @@ header h1 {
     box-shadow: 0 0 8px var(--profile-picture-glow);
     user-select: none;
 }
+
 .profile-wrapper {
     user-select: none;
 }
+
+/* Text Styles */
 p {
     line-height: 1.6;
     text-align: justify;
 }
+
 .pronouns {
     text-align: center;
-    color: #777; /* Grayish color */
-    margin-top: 0.5rem; /* Adjust as needed */
-    font-size: 0.8rem; /* Adjust as needed */
-    list-style: none; /* Remove default list styles */
-    padding: 0; /* Remove default list padding */
-    display: flex; /* Use flexbox for alignment */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    color: #777;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     user-select: none;
 }
+
 .pronouns li:not(:last-child) {
-    margin-right: 0.5rem; /* Adjust as needed */
-    user-select: none;
+    margin-right: 0.5rem;
 }
+
 .special-femboy-text {
     background: linear-gradient(75deg, var(--profile-picture-glow), var(--profile-picture-glow2));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
-    font-weight: bold; /* Ensures the gradient is more visible */
+    font-weight: bold;
 }
+
 .quote-of-the-day {
     text-align: center;
     font-size: 1.2rem;
     font-style: italic;
     margin-bottom: 1rem;
-    color: #999; /* Adjust color as needed */
+    color: #999;
     text-shadow: 0 0 10px #000;
 }
+
 .special-love-text {
     background: linear-gradient(75deg, #f97a7d, #fba7a8);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: bold;
-    text-shadow: 0 0 10px #f97a7d; /* Adjust the color and blur radius as needed */
+    text-shadow: 0 0 10px #f97a7d;
 }
 
+/* Badge Styles */
 .badge {
     text-align: center;
     margin-bottom: 1rem;
     user-select: none;
 }
+
 .badges {
     max-width: fit-content;
     margin-inline: auto;
-    background-color: var(--dark1-background); /* Background color */
-    border-radius: 10px; /* Rounded border */
-    padding: 6px;
-    padding-bottom: 2px;
-    padding-top: 6px;
+    background-color: var(--dark1-background);
+    border-radius: 10px;
+    padding: 6px 0 2px;
     user-select: none;
 }
+
 .badges img {
-    height: 26px; /* Adjust size as needed */
-    weight: auto;
-    margin: 0 4px; /* Adjust spacing between badges */
+    height: 26px;
+    width: auto;
+    margin: 0 4px;
     user-select: none;
 }
+
+/* Trans Flag Text */
 .trans-flag-text {
     background: linear-gradient(
         180deg,
-        #55CDFC 0%,    /* Light blue */
+        #55CDFC 0%,
         #55CDFC 30%,
-        #F7A8B8 30%,   /* Pink */
+        #F7A8B8 30%,
         #F7A8B8 45%,
-        #FFFFFF 45%,   /* White */
+        #FFFFFF 45%,
         #FFFFFF 55%,
-        #F7A8B8 55%,   /* Pink */
+        #F7A8B8 55%,
         #F7A8B8 70%,
-        #55CDFC 70%,   /* Light blue */
+        #55CDFC 70%,
         #55CDFC 100%
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: bold;
 }
+
 .center-text {
     text-align: center;
 }
+
+/* Link Styles */
 .location-link:link, .location-link:visited, .location-link:hover, .location-link:active {
     color: var(--text-color);
     text-decoration: none;
     border-bottom: 1px dotted var(--profile-picture-glow);
 }
+
 .icon, .location-link, .timezone-display {
     display: inline-block;
     vertical-align: middle;
 }
+
 .location-link, .timezone-display {
     position: relative;
-    padding-right: 4px
+    padding-right: 4px;
 }
+
 #cest-time {
     position: relative;
     font-family: monospace;
     font-size: 18px;
 }
+
 .dyna-badges a, .dyna-badges img {
     display: inline-block;
     vertical-align: middle;
@@ -185,3 +205,14 @@ p {
     height: auto;
 }
 
+/* Footer Styles */
+.made-with-text {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-style: italic;
+    padding: 0 1em;
+    font-size: 0.8rem;
+    background: var(--dark1-background);
+}
