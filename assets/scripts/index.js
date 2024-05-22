@@ -22,7 +22,7 @@ function updateCESTTime() {
     const formattedHours12 = String(hours12).padStart(2, '0');
 
     // Update the display
-    cestDisplay.textContent = `${hours24}:${minutes}:${seconds} | ${formattedHours12}:${minutes}:${seconds} ${period}`;
+    cestDisplay.textContent = `${hours24}:${minutes}:${seconds} · ${formattedHours12}:${minutes}:${seconds} ${period}`;
 }
 
 setInterval(updateCESTTime, 1000);
