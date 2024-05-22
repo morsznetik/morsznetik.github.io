@@ -5,21 +5,30 @@ function updateCESTTime() {
     // Get current time in UTC
     const now = new Date();
 
-    // Convert to CEST by adding 2 hours to UTC time
-    const cestOffset = 2 * 60; // CEST is UTC+2
-    const cestTime = new Date(now.getTime() + cestOffset * 60 * 1000);
+    // Convert to CEST by adding the CEST offset (UTC+2)
+    const cestOffset = 2 * 60 * 60 * 1000; // CEST is UTC+2 hours in milliseconds
+    const cestTime = new Date(now.getTime() + cestOffset);
 
     // Format the time in 24-hour format
-    const hours = String(cestTime.getUTCHours()).padStart(2, '0');
+    const hours24 = String(cestTime.getUTCHours()).padStart(2, '0');
     const minutes = String(cestTime.getUTCMinutes()).padStart(2, '0');
     const seconds = String(cestTime.getUTCSeconds()).padStart(2, '0');
 
-    cestDisplay.textContent = `${hours}:${minutes}:${seconds}`;
+    // Format the time in 12-hour format
+    let hours12 = cestTime.getUTCHours();
+    const period = hours12 >= 12 ? 'PM' : 'AM';
+    hours12 = hours12 % 12;
+    hours12 = hours12 ? hours12 : 12; // the hour '0' should be '12'
+    const formattedHours12 = String(hours12).padStart(2, '0');
+
+    // Update the display
+    cestDisplay.textContent = `${hours24}:${minutes}:${seconds} | ${formattedHours12}:${minutes}:${seconds} ${period}`;
 }
 
 setInterval(updateCESTTime, 1000);
 
 updateCESTTime();
+
 
 document.addEventListener("DOMContentLoaded", function() {
     var quotes = [
