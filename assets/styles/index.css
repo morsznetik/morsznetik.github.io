@@ -1,4 +1,5 @@
 @import url('../fonts/fonts.css');
+@import url('./special/text-styles.css');
 
 /* Define CSS Variables */
 :root {
@@ -21,6 +22,11 @@ body {
     font-weight: normal;
     background-color: var(--dark1-background);
     color: var(--text-color);
+}
+
+p {
+    line-height: 1.6;
+    text-align: justify;
 }
 
 /* Header Styles */
@@ -58,14 +64,14 @@ header h1 {
     position: relative;
 }
 
-.container-outline-glow {
+.container-highlight {
     border: 2px solid rgba(253, 161, 153, 0.6);
     box-shadow: 0 0 10px rgba(253, 161, 153, 0.6),
                 0 0 20px rgba(255, 217, 214, 0.2);
 }
 
 /* Profile Picture Styles */
-.profile-pic {
+.profile-image {
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -75,17 +81,12 @@ header h1 {
     box-shadow: 0 0 8px var(--profile-picture-glow);
 }
 
-.profile-wrapper {
+.profile-container {
     user-select: none;
 }
 
-/* Text Styles */
-p {
-    line-height: 1.6;
-    text-align: justify;
-}
-
-.pronouns {
+/* Special Styles */
+.pronouns-list {
     text-align: center;
     color: #777;
     margin-top: 0.5rem;
@@ -98,33 +99,17 @@ p {
     user-select: none;
 }
 
-.pronouns li:not(:last-child) {
+.pronouns-list li:not(:last-child) {
     margin-right: 0.5rem;
 }
 
-.special-femboy-text {
-    background: linear-gradient(75deg, var(--profile-picture-glow), var(--profile-picture-glow2));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
-    font-weight: bold;
-}
-
-.quote-of-the-day {
+.daily-quote {
     text-align: center;
     font-size: 1.2rem;
     font-style: italic;
     margin-bottom: 1rem;
     color: #999;
     text-shadow: 0 0 10px #000;
-}
-
-.special-love-text {
-    background: linear-gradient(75deg, #f97a7d, #fba7a8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold;
-    text-shadow: 0 0 10px #f97a7d;
 }
 
 /* Badge Styles */
@@ -150,43 +135,24 @@ p {
     user-select: none;
 }
 
-/* Trans Flag Text */
-.trans-flag-text {
-    background: linear-gradient(
-        180deg,
-        #55CDFC 0%,
-        #55CDFC 30%,
-        #F7A8B8 30%,
-        #F7A8B8 45%,
-        #FFFFFF 45%,
-        #FFFFFF 55%,
-        #F7A8B8 55%,
-        #F7A8B8 70%,
-        #55CDFC 70%,
-        #55CDFC 100%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold;
-}
-
-.center-text {
+/* Utility Styles */
+.text-center {
     text-align: center;
 }
 
 /* Link Styles */
-.location-link:link, .location-link:visited, .location-link:hover, .location-link:active {
+.location-url:link, .location-url:visited, .location-url:hover, .location-url:active {
     color: var(--text-color);
     text-decoration: none;
     border-bottom: 1px dotted var(--profile-picture-glow);
 }
 
-.icon, .location-link, .timezone-display {
+.icon, .location-url, .timezone-info {
     display: inline-block;
     vertical-align: middle;
 }
 
-.location-link, .timezone-display {
+.location-url, .timezone-info {
     position: relative;
     padding-right: 4px;
 }
@@ -197,7 +163,7 @@ p {
     font-size: 18px;
 }
 
-.dyna-badges a, .dyna-badges img {
+.dynamic-badges a, .dynamic-badges img {
     display: inline-block;
     vertical-align: middle;
     max-width: 100%;
@@ -217,7 +183,7 @@ p {
 }
 
 @media (max-height: 900px) {  /* couldnt find a better way to do this, update when content gets longer lol */
-    .content-wrapper {
+    .main-content {
         padding-bottom: 50px;
     }
 

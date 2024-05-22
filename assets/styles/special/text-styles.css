@@ -1,0 +1,32 @@
+.femboy-pronoun {
+    background: linear-gradient(75deg, var(--profile-picture-glow), var(--profile-picture-glow2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    font-weight: bold;
+}
+.special-love-text {
+    background: linear-gradient(75deg, #f97a7d, #fba7a8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    text-shadow: 0 0 10px #f97a7d;
+}
+.trans-flag-text {
+    background: linear-gradient(
+        180deg,
+        #55CDFC 0%,
+        #55CDFC 30%,
+        #F7A8B8 30%,
+        #F7A8B8 45%,
+        #FFFFFF 45%,
+        #FFFFFF 55%,
+        #F7A8B8 55%,
+        #F7A8B8 70%,
+        #55CDFC 70%,
+        #55CDFC 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}

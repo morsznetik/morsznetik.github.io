@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "<span class='trans-flag-text'>trans lives matter :3</span>",
     ];
 
-    var quoteElement = document.querySelector(".quote-of-the-day");
+    var quoteElement = document.querySelector(".daily-quote");
 
     var randomIndex = Math.floor(Math.random() * quotes.length);
 
