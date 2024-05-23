@@ -1,5 +1,5 @@
 .femboy-pronoun {
-    background: linear-gradient(75deg, var(--profile-picture-glow), var(--profile-picture-glow2));
+    background: linear-gradient(75deg, var(--accent-pink), var(--accent-pink-light));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
@@ -35,6 +35,7 @@
     font-size: 0.8rem;
 }
 #cest-time-military, #cest-time-standard {
+    position: relative;
     font-family: monospace;
-    font-size: 1.1rem;
+    font-size: 18px;
 }

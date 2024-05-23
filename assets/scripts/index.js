@@ -2,7 +2,7 @@ function updateCESTTime() {
     const cestDisplay24 = document.getElementById('cest-time-military');
     const cestDisplay12 = document.getElementById('cest-time-standard');
     const cestPeriod = document.getElementById('cest-period');
-    if (!cestDisplay24 || !cestDisplay12 || !cestPeriod) return;
+    if (!cestDisplay24 || !cestDisplay12 || !cestPeriod) throw ('error while trying to update time');
 
     // Get current time in UTC
     const now = new Date();
@@ -36,9 +36,9 @@ updateCESTTime();
 
 document.addEventListener("DOMContentLoaded", function() {
     var quotes = [
-        "bingo bingo baby<span class='special-love-text'> I love you </span>ain't that crazy!?!?",
+        "bingo bingo baby<span class='love-text'> I love you </span>ain't that crazy!?!?",
         "it ain't stupid if it works",
-        "<span class='trans-flag-text'>trans lives matter :3</span>",
+        "<span class='trans-text'>trans lives matter :3</span>",
     ];
 
     var quoteElement = document.querySelector(".daily-quote");

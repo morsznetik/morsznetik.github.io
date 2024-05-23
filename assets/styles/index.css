@@ -3,15 +3,11 @@
 
 /* Define CSS Variables */
 :root {
-    --light-accent-color: #c2f9fe;
-    --accent-color: #99f5fd;
-    --dark-accent-color: #8adde4;
-    --darker-accent-color: #7ac4ca;
-    --dark1-background: #202021;
-    --darker1-background: #171616;
+    --dark-bg: #202021;
+    --darker-bg: #171616;
     --text-color: #ffffff;
-    --profile-picture-glow: #fda199;
-    --profile-picture-glow2: #ffd9d6;
+    --accent-pink: #fda199;
+    --accent-pink-light: #ffd9d6;
 }
 
 /* Global Styles */
@@ -20,7 +16,7 @@ body {
     height: 100vh;
     font-family: 'Mint Grotesk', sans-serif;
     font-weight: normal;
-    background-color: var(--dark1-background);
+    background-color: var(--dark-bg);
     color: var(--text-color);
 }
 
@@ -31,7 +27,7 @@ p {
 
 /* Header Styles */
 header {
-    background-color: var(--darker1-background);
+    background-color: var(--darker-bg);
     color: white;
     display: flex;
     justify-content: space-between;
@@ -58,7 +54,7 @@ header h1 {
     max-width: 800px;
     margin: 2rem auto;
     padding: 2rem;
-    background-color: var(--darker1-background);
+    background-color: var(--darker-bg);
     border-radius: 16px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: relative;
@@ -77,8 +73,8 @@ header h1 {
     border-radius: 50%;
     display: block;
     margin: 0 auto 1rem;
-    border: 3px solid var(--profile-picture-glow);
-    box-shadow: 0 0 8px var(--profile-picture-glow);
+    border: 3px solid var(--accent-pink);
+    box-shadow: 0 0 8px var(--accent-pink);
 }
 
 .profile-container {
@@ -119,16 +115,16 @@ header h1 {
     user-select: none;
 }
 
-.badges {
+.badges-container {
     max-width: fit-content;
     margin-inline: auto;
-    background-color: var(--dark1-background);
+    background-color: var(--dark-bg);
     border-radius: 10px;
-    padding: 6px 0 2px;
+    padding: 6px 2px 2px;
     user-select: none;
 }
 
-.badges img {
+.badges-container img {
     height: 26px;
     width: auto;
     margin: 0 4px;
@@ -144,26 +140,20 @@ header h1 {
 .location-url:link, .location-url:visited, .location-url:hover, .location-url:active {
     color: var(--text-color);
     text-decoration: none;
-    border-bottom: 1px dotted var(--profile-picture-glow);
+    border-bottom: 1px dotted var(--accent-pink);
 }
 
-.icon, .location-url, .timezone-info {
+.icon, .location-widget-url, .timezone-widget {
     display: inline-block;
     vertical-align: middle;
 }
 
-.location-url, .timezone-info {
+.location-url, .timezone-widget {
     position: relative;
     padding-right: 4px;
 }
 
-#cest-time {
-    position: relative;
-    font-family: monospace;
-    font-size: 18px;
-}
-
-.dynamic-badges a, .dynamic-badges img {
+.status-badges-container a, .status-badges-container img {
     display: inline-block;
     vertical-align: middle;
     max-width: 100%;
@@ -175,10 +165,8 @@ header h1 {
     position: fixed;
     bottom: 0;
     width: 100%;
-    text-align: center;
     padding: 0 1em;
-    font-size: 0.8rem;
-    background: var(--dark1-background);
+    background: var(--dark-bg);
 }
 
 @media (max-height: 800px) {  /* couldnt find a better way to do this, update when content gets longer lol */
