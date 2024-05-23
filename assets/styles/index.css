@@ -136,7 +136,7 @@ header h1 {
 }
 
 /* Utility Styles */
-.text-center {
+.center {
     text-align: center;
 }
 
@@ -171,18 +171,17 @@ header h1 {
 }
 
 /* Footer Styles */
-.made-with-text {
+.footer {
     position: fixed;
     bottom: 0;
     width: 100%;
     text-align: center;
-    font-style: italic;
     padding: 0 1em;
     font-size: 0.8rem;
     background: var(--dark1-background);
 }
 
-@media (max-height: 900px) {  /* couldnt find a better way to do this, update when content gets longer lol */
+@media (max-height: 800px) {  /* couldnt find a better way to do this, update when content gets longer lol */
     .main-content {
         padding-bottom: 50px;
     }

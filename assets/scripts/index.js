@@ -1,6 +1,8 @@
 function updateCESTTime() {
-    const cestDisplay = document.getElementById('cest-time');
-    if (!cestDisplay) return;
+    const cestDisplay24 = document.getElementById('cest-time-military');
+    const cestDisplay12 = document.getElementById('cest-time-standard');
+    const cestPeriod = document.getElementById('cest-period');
+    if (!cestDisplay24 || !cestDisplay12 || !cestPeriod) return;
 
     // Get current time in UTC
     const now = new Date();
@@ -22,7 +24,9 @@ function updateCESTTime() {
     const formattedHours12 = String(hours12).padStart(2, '0');
 
     // Update the display
-    cestDisplay.textContent = `${hours24}:${minutes}:${seconds} · ${formattedHours12}:${minutes}:${seconds} ${period}`;
+    cestDisplay24.textContent = `${hours24}:${minutes}:${seconds}`;
+    cestDisplay12.textContent = `${formattedHours12}:${minutes}:${seconds}`;
+    cestPeriod.textContent = period;
 }
 
 setInterval(updateCESTTime, 1000);

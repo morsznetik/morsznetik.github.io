@@ -5,14 +5,14 @@
     display: inline-block;
     font-weight: bold;
 }
-.special-love-text {
+.love-text {
     background: linear-gradient(75deg, #f97a7d, #fba7a8);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: bold;
     text-shadow: 0 0 10px #f97a7d;
 }
-.trans-flag-text {
+.trans-text {
     background: linear-gradient(
         180deg,
         #55CDFC 0%,
@@ -29,4 +29,12 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: bold;
+}
+.footer-text {
+    font-style: italic;
+    font-size: 0.8rem;
+}
+#cest-time-military, #cest-time-standard {
+    font-family: monospace;
+    font-size: 1.1rem;
 }
