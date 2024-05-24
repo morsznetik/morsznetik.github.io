@@ -75,6 +75,7 @@ header h1 {
     margin: 0 auto 1rem;
     border: 3px solid var(--accent-pink);
     box-shadow: 0 0 8px var(--accent-pink);
+    z-index: 1;
 }
 
 .profile-container {
@@ -106,6 +107,11 @@ header h1 {
     margin-bottom: 1rem;
     color: #999;
     text-shadow: 0 0 10px #000;
+}
+#cest-time-military, #cest-time-standard {
+    position: relative;
+    font-family: monospace;
+    font-size: 18px;
 }
 
 /* Badge Styles */
@@ -169,9 +175,13 @@ header h1 {
     background: var(--dark-bg);
 }
 
-@media (max-height: 800px) {  /* couldnt find a better way to do this, update when content gets longer lol */
+@media (max-height: 900px) {  /* couldnt find a better way to do this, update when content gets longer lol */
     .main-content {
         padding-bottom: 50px;
     }
 
+}
+.bio-container p {
+    text-align: center;
+    font-weight: 300;
 }
