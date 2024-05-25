@@ -25,6 +25,15 @@ p {
     text-align: justify;
 }
 
+.main-content {
+    display: flex;
+}
+@media (max-width: 1000px) {
+    .main-content {
+        flex-direction: column;
+    }
+}
+
 /* Header Styles */
 header {
     background-color: var(--darker-bg);
