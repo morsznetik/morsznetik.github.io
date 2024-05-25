@@ -1,8 +1,16 @@
+function is12HourLocale() {
+    // Get user's locale
+    const userLocale = navigator.language;
+
+    // Check if the user's locale prefers 12-hour clock format
+    const formatter = new Intl.DateTimeFormat(userLocale, { hour: 'numeric' });
+    const options = formatter.resolvedOptions();
+    return options.hour12;
+}
+
 function updateCESTTime() {
-    const cestDisplay24 = document.getElementById('cest-time-military');
-    const cestDisplay12 = document.getElementById('cest-time-standard');
+    const cestDisplay = document.getElementById('cest-time');
     const cestPeriod = document.getElementById('cest-period');
-    if (!cestDisplay24 || !cestDisplay12 || !cestPeriod) throw ('error while trying to update time');
 
     // Get current time in UTC
     const now = new Date();
@@ -16,35 +24,44 @@ function updateCESTTime() {
     const minutes = String(cestTime.getUTCMinutes()).padStart(2, '0');
     const seconds = String(cestTime.getUTCSeconds()).padStart(2, '0');
 
-    // Format the time in 12-hour format
-    let hours12 = cestTime.getUTCHours();
-    const period = hours12 >= 12 ? 'PM' : 'AM';
-    hours12 = hours12 % 12;
-    hours12 = hours12 ? hours12 : 12; // the hour '0' should be '12'
-    const formattedHours12 = String(hours12).padStart(2, '0');
+    // Format the time in 12-hour format if user locale is 12-hour
+    if (is12HourLocale()) {
+        let hours12 = cestTime.getUTCHours();
+        const period = hours12 >= 12 ? 'PM' : 'AM';
+        hours12 = hours12 % 12;
+        hours12 = hours12 ? hours12 : 12; // the hour '0' should be '12'
+        const formattedHours12 = String(hours12).padStart(2, '0');
 
-    // Update the display
-    cestDisplay24.textContent = `${hours24}:${minutes}:${seconds}`;
-    cestDisplay12.textContent = `${formattedHours12}:${minutes}:${seconds}`;
-    cestPeriod.textContent = period;
+        // Update the display
+        cestDisplay.textContent = `${formattedHours12}:${minutes}:${seconds}`;
+        cestPeriod.textContent = period;
+
+    } else {
+        // Update the display in 24-hour format
+        cestDisplay.textContent = `${hours24}:${minutes}:${seconds}`;
+
+        // Hide the 12-hour period
+        cestPeriod.style.display = 'none';
+    }
 }
 
-setInterval(updateCESTTime, 1000);
-
-updateCESTTime();
-
-
-document.addEventListener("DOMContentLoaded", function() {
-    var quotes = [
+function updateQuotes() {
+    let quotes = [
         "bingo bingo baby<span class='love-text'> I love you </span>ain't that crazy!?!?",
         "it ain't stupid if it works",
         "<span class='trans-text'>trans lives matter :3</span>",
     ];
 
-    var quoteElement = document.querySelector(".daily-quote");
+    let quoteElement = document.querySelector(".daily-quote");
 
-    var randomIndex = Math.floor(Math.random() * quotes.length);
+    let randomIndex = Math.floor(Math.random() * quotes.length);
 
     quoteElement.innerHTML = '"' + quotes[randomIndex] + '"'
-});
+}
 
+document.addEventListener("DOMContentLoaded", function() {
+    updateQuotes();
+    setInterval(updateCESTTime, 1000);
+    updateCESTTime();
+    console.log(`%cfeel free to judge my terrible code :3`, "color: red; font-weight: bold;");
+});

@@ -108,7 +108,7 @@ header h1 {
     color: #999;
     text-shadow: 0 0 10px #000;
 }
-#cest-time-military, #cest-time-standard {
+#cest-time {
     position: relative;
     font-family: monospace;
     font-size: 18px;
@@ -167,7 +167,7 @@ header h1 {
 }
 
 /* Footer Styles */
-.footer {
+footer {
     position: fixed;
     bottom: 0;
     width: 100%;
