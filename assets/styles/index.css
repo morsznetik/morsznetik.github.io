@@ -27,8 +27,9 @@ p {
 
 .main-content {
     display: flex;
+    margin: 0;
 }
-@media (max-width: 1000px) {
+@media (max-width: 1170px) {
     .main-content {
         flex-direction: column;
     }
@@ -61,7 +62,7 @@ header h1 {
 /* Container Styles */
 .container {
     max-width: 800px;
-    margin: 2rem auto;
+    margin: 2rem auto 0;
     padding: 2rem;
     background-color: var(--darker-bg);
     border-radius: 16px;
@@ -206,4 +207,11 @@ footer {
 .last-update-text {
     font-family: monospace;
     font-size: 1.1rem;
+}
+.spotify-display {
+    display: flex;
+    flex-direction: column;
+}
+.spotify-display p {
+    font-weight: bold;
 }
