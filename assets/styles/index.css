@@ -43,6 +43,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
+    position: relative; /* Needed for absolute positioning */
 }
 
 .header-text {
@@ -51,10 +52,18 @@ header {
     font-size: 32px;
     font-weight: 300;
 }
+
 header .blog-text {
     position: absolute;
-    margin-left: 2rem;
+    left: 2rem;
 }
+
+header .socials-text {
+    position: absolute;
+    right: 2rem;
+}
+
+
 /* Line Separator */
 .line {
     width: 100%;
