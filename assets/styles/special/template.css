@@ -1,0 +1,50 @@
+@import url('./utility.css');
+
+:root {
+    --dark-bg: #202021;
+    --darker-bg: #171616;
+    --text-color: #ffffff;
+    --accent-pink: #fda199;
+    --accent-pink-light: #ffd9d6;
+}
+
+header {
+    background-color: var(--darker-bg);
+    color: var(--text-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    position: relative;
+}
+
+.header-text {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 300;
+}
+
+header .blog-text {
+    position: absolute;
+    left: 2rem;
+}
+
+header .socials-text {
+    position: absolute;
+    right: 2rem;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 0 1em;
+    background: var(--dark-bg);
+}
+
+@media (max-height: 900px) {  /* couldnt find a better way to do this, update when content gets longer lol */
+    .main-content {
+        padding-bottom: 50px;
+    }
+}

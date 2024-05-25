@@ -1,17 +1,8 @@
 /* Imports */
 @import url('../fonts/fonts.css');
 @import url('./special/text-styles.css');
-@import url('./special/utility.css');
-@import url('./special/header.css');
+@import url('./special/template.css');
 
-/* Define CSS Variables */
-:root {
-    --dark-bg: #202021;
-    --darker-bg: #171616;
-    --text-color: #ffffff;
-    --accent-pink: #fda199;
-    --accent-pink-light: #ffd9d6;
-}
 
 /* Global Styles */
 body {
@@ -149,21 +140,6 @@ p {
     vertical-align: middle;
     max-width: 100%;
     height: auto;
-}
-
-/* Footer Styles */
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    padding: 0 1em;
-    background: var(--dark-bg);
-}
-
-@media (max-height: 900px) {  /* couldnt find a better way to do this, update when content gets longer lol */
-    .main-content {
-        padding-bottom: 50px;
-    }
 }
 
 /* Bio Container Styles */
