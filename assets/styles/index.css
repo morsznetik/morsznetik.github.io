@@ -185,3 +185,16 @@ footer {
     text-align: center;
     font-weight: 300;
 }
+.bio-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.bio-container li {
+    margin-bottom: 10px;
+    text-align: center;
+}
+.last-update-text {
+    font-family: monospace;
+    font-size: 1.1rem;
+}

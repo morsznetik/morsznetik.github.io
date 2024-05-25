@@ -7,7 +7,7 @@
     <title>About Me</title>
     <link rel="icon" href="./assets/favicons/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./assets/styles/index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
     <body>
         <header>
@@ -29,7 +29,7 @@
                     <ul class="pronouns-list">
                         <li>he/they</li>
                         <li>·</li>
-                        <li class="femboy-pronoun">femboy</li>
+                        <li class="femboy-text">femboy</li>
                     </ul>
                 </div>
                 <div class="quote-container">
@@ -46,11 +46,11 @@
                 </div>
                 <div class="widget-container center">
                     <div class="widget">
-                        <i class="fa-regular fa-map icon" style="color: #e8eaed;"></i>
+                        <i class="far fa-map icon"></i>
                         <a class="location-url" href="https://www.google.com/maps/place/Warsaw">Poland, Warsaw</a>
                     </div>
                     <div class="widget">
-                        <i class="fa-regular fa-clock icon" style="color: #e8eaed;"></i>
+                        <i class="far fa-clock icon"></i>
                         <span class="timezone-widget">
                             <span id="cest-time">00:00:00</span>
                             <span id="cest-period">AM</span>
@@ -58,10 +58,18 @@
                     </div>
                 </div>
                 <div class="bio-container">
-                    <p>Keep in mind that I'm a minor. Relationship status: TAKEN :3 Love you!</p>
-                    <p>Here's some basic info about me: I'm a femboy, bi, I like programming in Python, sound and stage engineering ^_^ In my free time, I study, mess around in Python, and occasionally play games like GTA5 or Minecraft. I want to make friends 😭😭 Please come into my DMs :3 I love Blahaj <3</p>
-                    <p>Fun fact: This is my first time making a proper website! Let me know if you encounter any bugs. Some things I'll add to this website maybe include: a blog, avatar decorations, and some other miscellaneous features. Also, if you refresh the website, the quotes change! Last update: 23.05.2024</p>
+                    <ul class="bio-list">
+                        <li><i class="far fa-heart"></i> Keep in mind that I'm a minor. Relationship status: <span class="femboy-text femboy-glow1">taken</span> :3 Love you!</li>
+                        <li><i class="far fa-circle-question"></i> Here's some basic info about me: I'm a femboy, bi, I like programming in Python, sound and stage engineering ^_^ In my free time, I study, mess around in Python, and occasionally play games like GTA5 or Minecraft. I want to make friends 😭😭 Please come into my DMs :3
+                            <br/>I love Blahaj <3</li>
+                        <li><i class="far fa-lightbulb"></i> Fun fact: This is my first time making a proper website! Let me know if you encounter any bugs. Some things I'll add to this website maybe include: a blog, avatar decorations, and some other miscellaneous features. Also, if you refresh the website, the quotes change! <br/>
+                           <span class="last-update-widget">Last update:
+                                <span class="last-update-text" id="last-update" data-timestamp="1716626645">today</span>
+                            </span>
+                        </li>
+                    </ul>
                 </div>
+
                 <div class="status-badges-container center">
                     <a href="https://api.statusbadges.me/openspotify/1124762870949888051" target="_blank" rel="noopener">
                         <img src="https://api.statusbadges.me/badge/spotify/1124762870949888051?style=for-the-badge" alt="spotify" draggable="false">

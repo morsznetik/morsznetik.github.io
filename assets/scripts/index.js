@@ -47,7 +47,7 @@ function updateCESTTime() {
 
 function updateQuotes() {
     let quotes = [
-        "bingo bingo baby<span class='love-text'> I love you </span>ain't that crazy!?!?",
+        "bingo bingo baby<span class='love-text love-glow'> I love you </span>ain't that crazy!?!?",
         "it ain't stupid if it works",
         "<span class='trans-text'>trans lives matter :3</span>",
     ];
@@ -59,8 +59,30 @@ function updateQuotes() {
     quoteElement.innerHTML = '"' + quotes[randomIndex] + '"'
 }
 
+function updateTimeAgo() {
+    const lastUpdateElement = document.getElementById('last-update');
+    const lastUpdateTimestamp = parseInt(lastUpdateElement.getAttribute('data-timestamp'), 10) * 1000;
+    const currentTime = new Date();
+    const elapsed = currentTime - lastUpdateTimestamp;
+    const elapsedDays = Math.floor(elapsed / (1000 * 60 * 60 * 24));
+
+    let displayText;
+
+    if (elapsedDays === 0) {
+        displayText = "today";
+    } else if (elapsedDays === 1) {
+        displayText = "1 day ago";
+    } else {
+        displayText = `${elapsedDays} days ago`;
+    }
+    lastUpdateElement.innerText = displayText;
+}
+
+
 document.addEventListener("DOMContentLoaded", function() {
     updateQuotes();
+    updateTimeAgo();
+
     setInterval(updateCESTTime, 1000);
     updateCESTTime();
     console.log(`%cfeel free to judge my terrible code :3`, "color: red; font-weight: bold;");
