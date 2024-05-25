@@ -49,7 +49,7 @@ function updateQuotes() {
     let quotes = [
         "bingo bingo baby<span class='love-text love-glow'> I love you </span>ain't that crazy!?!?",
         "it ain't stupid if it works",
-        "<span class='trans-text'>trans lives matter :3</span>",
+        "<span class='trans-text'>trans lives matter :3 !!</span>",
     ];
 
     let quoteElement = document.querySelector(".daily-quote");
