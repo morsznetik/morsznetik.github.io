@@ -85,9 +85,3 @@ footer {
     padding: 0 1em;
     background: var(--dark-bg);
 }
-
-@media (max-height: 900px) {  /* couldnt find a better way to do this, update when content gets longer lol */
-    .main-content {
-        padding-bottom: 50px;
-    }
-}

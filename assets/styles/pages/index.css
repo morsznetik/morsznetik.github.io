@@ -2,6 +2,11 @@
 @import url('../special/template.css');
 
 
+.main-content {
+    padding-bottom: 50px;
+}
+
+
 /* Profile Picture Styles */
 .profile-image {
     width: 150px;
@@ -129,3 +134,18 @@
 .spotify-display p {
     font-weight: 900;
 }
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Horizontally center the items */
+    font-size: 1.5rem;
+}
+
+.social-item {
+    margin: 0 10px; /* Adjust margin as needed */
+}
+
+

@@ -50,5 +50,5 @@
 
 .no-a-styles:link, .no-a-styles:visited, .no-a-styles:hover, .no-a-styles:active {
     text-decoration: none;
-    color: var(--text-color);
+    color: inherit;
 }
