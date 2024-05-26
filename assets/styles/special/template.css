@@ -1,4 +1,7 @@
 @import url('./utility.css');
+@import url('./text-styles.css');
+@import url('../../fonts/fonts.css');
+
 
 :root {
     --dark-bg: #202021;
