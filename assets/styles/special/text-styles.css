@@ -5,10 +5,10 @@
     display: inline-block;
     font-weight: bold;
 }
-.femboy-glow1 {
+.femboy-glow-light {
     text-shadow: 0 0 5px var(--accent-pink);
 }
-.femboy-glow2 {
+.femboy-glow {
     text-shadow: 0 0 10px var(--accent-pink);
 }
 .love-text {
