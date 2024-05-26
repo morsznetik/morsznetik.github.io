@@ -1,48 +1,6 @@
 /* Imports */
-@import url('./special/template.css');
+@import url('../special/template.css');
 
-
-/* Global Styles */
-body {
-    margin: 0;
-    height: 100vh;
-    font-family: 'Mint Grotesk', sans-serif;
-    font-weight: normal;
-    background-color: var(--dark-bg);
-    color: var(--text-color);
-}
-
-p {
-    line-height: 1.6;
-    text-align: justify;
-}
-
-.main-content {
-    display: flex;
-    margin: 0;
-}
-@media (max-width: 1170px) {
-    .main-content {
-        flex-direction: column;
-    }
-}
-
-/* Container Styles */
-.container {
-    max-width: 800px;
-    margin: 2rem auto 0;
-    padding: 2rem;
-    background-color: var(--darker-bg);
-    border-radius: 16px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: relative;
-}
-
-.container-highlight {
-    border: 2px solid rgba(253, 161, 153, 0.6);
-    box-shadow: 0 0 10px rgba(253, 161, 153, 0.6),
-                0 0 20px rgba(255, 217, 214, 0.2);
-}
 
 /* Profile Picture Styles */
 .profile-image {
@@ -169,5 +127,5 @@ p {
 }
 
 .spotify-display p {
-    font-weight: bold;
+    font-weight: 900;
 }
