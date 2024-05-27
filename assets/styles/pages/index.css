@@ -119,10 +119,13 @@
     text-align: center;
 }
 
-/* Last Update Text */
+/* Last Update */
 .last-update-text {
     font-family: monospace;
     font-size: 1.1rem;
+}
+.last-update-widget {
+    margin-top: 2rem;
 }
 
 /* Spotify Display Styles */
@@ -140,12 +143,23 @@
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: center; /* Horizontally center the items */
+    justify-content: center;
+    align-items: center;
     font-size: 1.5rem;
+}
+
+@media (max-width: 507px) {
+    .social-links {
+        flex-direction: column;
+        max-width: 100%;
+    }
 }
 
 .social-item {
     margin: 0 10px; /* Adjust margin as needed */
 }
 
+.link-section-header {
+    margin: 0
+}
 
