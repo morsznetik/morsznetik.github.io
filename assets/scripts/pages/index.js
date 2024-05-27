@@ -8,7 +8,7 @@ function is12HourLocale() {
     return options.hour12;
 }
 
-function updateCESTTime() {
+function updateTime() {
     const cestDisplay = document.getElementById('cest-time');
     const cestPeriod = document.getElementById('cest-period');
 
@@ -50,6 +50,8 @@ function updateQuotes() {
         "bingo bingo baby<span class='love-text love-glow'> I love you </span>ain't that crazy!?!?",
         "it ain't stupid if it works",
         "<span class='trans-text'>trans lives matter :3 !!</span>",
+        "im not lazy, im on energy-saving mode",
+        "im not short, just fun-sized :3"
     ];
 
     let quoteElement = document.querySelector(".daily-quote");
@@ -59,29 +61,24 @@ function updateQuotes() {
     quoteElement.innerHTML = '"' + quotes[randomIndex] + '"'
 }
 
-async function updateTimeAgo() {
+async function updateLastUpdateWidget() {
     const lastUpdateElement = document.getElementById('last-update');
-    const githubRepo = 'morsznetik/morsznetik.github.io'; // Replace 'owner' and 'repo' with your GitHub repository details
+    const githubRepo = 'morsznetik/morsznetik.github.io';
     const githubApiUrl = `https://api.github.com/repos/${githubRepo}/commits?per_page=1`;
 
     try {
-        const responsePromise = fetch(githubApiUrl);
-        const timeoutPromise = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                reject(new Error("Timeout occurred while fetching data from GitHub."));
-            }, 1000);
-        });
+        const response = await Promise.race([
+            fetch(githubApiUrl),
+            new Promise((_, reject) => setTimeout(() =>
+                reject(new Error("Timeout occurred while fetching data from GitHub.")), 1000))
+        ]);
 
-        const response = await Promise.race([responsePromise, timeoutPromise]);
         const commits = await response.json();
-
         const lastUpdateTimestamp = parseInt(lastUpdateElement.getAttribute('data-timestamp'), 10) * 1000;
         const currentTime = new Date();
-        const elapsed = currentTime - (commits && commits.length > 0 ? new Date(commits[0].commit.author.date).getTime() : lastUpdateTimestamp);
+        const elapsed = commits && commits.length > 0 ? currentTime - new Date(commits[0].commit.author.date).getTime() : currentTime - lastUpdateTimestamp;
 
         lastUpdateElement.innerText = formatTimeAgo(elapsed);
-
-        return Promise.resolve(); // Return a resolved promise to indicate completion
     } catch (error) {
         console.error("Error fetching data from GitHub:", error);
         const lastUpdateTimestamp = parseInt(lastUpdateElement.getAttribute('data-timestamp'), 10) * 1000;
@@ -89,10 +86,10 @@ async function updateTimeAgo() {
         const elapsed = currentTime - lastUpdateTimestamp;
 
         lastUpdateElement.innerText = formatTimeAgo(elapsed);
-
-        return Promise.reject(error); // Return a rejected promise to indicate error
+        throw error; // Re-throw the error to propagate it to the caller
     }
 }
+
 
 
 function formatTimeAgo(elapsed) {
@@ -113,9 +110,9 @@ function formatTimeAgo(elapsed) {
 
 document.addEventListener("DOMContentLoaded", async function() {
     updateQuotes();
-    await updateTimeAgo();
+    await updateLastUpdateWidget();
 
-    setInterval(updateCESTTime, 1000);
-    updateCESTTime();
-    console.log(`%cfeel free to judge my terrible code :3`, "color: red; font-weight: bold;");
+    setInterval(updateTime, 1000);
+    updateTime();
+    console.log(`%cfeel free to judge my terrible code :3`, "color: red; font-weight: bold; font-size: 32px;");
 });
