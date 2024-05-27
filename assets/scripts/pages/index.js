@@ -59,29 +59,61 @@ function updateQuotes() {
     quoteElement.innerHTML = '"' + quotes[randomIndex] + '"'
 }
 
-function updateTimeAgo() {
+async function updateTimeAgo() {
     const lastUpdateElement = document.getElementById('last-update');
-    const lastUpdateTimestamp = parseInt(lastUpdateElement.getAttribute('data-timestamp'), 10) * 1000;
-    const currentTime = new Date();
-    const elapsed = currentTime - lastUpdateTimestamp;
-    const elapsedDays = Math.floor(elapsed / (1000 * 60 * 60 * 24));
+    const githubRepo = 'morsznetik/morsznetik.github.io'; // Replace 'owner' and 'repo' with your GitHub repository details
+    const githubApiUrl = `https://api.github.com/repos/${githubRepo}/commits?per_page=1`;
 
-    let displayText;
+    try {
+        const responsePromise = fetch(githubApiUrl);
+        const timeoutPromise = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                reject(new Error("Timeout occurred while fetching data from GitHub."));
+            }, 1000);
+        });
 
-    if (elapsedDays === 0) {
-        displayText = "today";
-    } else if (elapsedDays === 1) {
-        displayText = "1 day ago";
-    } else {
-        displayText = `${elapsedDays} days ago`;
+        const response = await Promise.race([responsePromise, timeoutPromise]);
+        const commits = await response.json();
+
+        const lastUpdateTimestamp = parseInt(lastUpdateElement.getAttribute('data-timestamp'), 10) * 1000;
+        const currentTime = new Date();
+        const elapsed = currentTime - (commits && commits.length > 0 ? new Date(commits[0].commit.author.date).getTime() : lastUpdateTimestamp);
+
+        lastUpdateElement.innerText = formatTimeAgo(elapsed);
+
+        return Promise.resolve(); // Return a resolved promise to indicate completion
+    } catch (error) {
+        console.error("Error fetching data from GitHub:", error);
+        const lastUpdateTimestamp = parseInt(lastUpdateElement.getAttribute('data-timestamp'), 10) * 1000;
+        const currentTime = new Date();
+        const elapsed = currentTime - lastUpdateTimestamp;
+
+        lastUpdateElement.innerText = formatTimeAgo(elapsed);
+
+        return Promise.reject(error); // Return a rejected promise to indicate error
     }
-    lastUpdateElement.innerText = displayText;
 }
 
 
-document.addEventListener("DOMContentLoaded", function() {
+function formatTimeAgo(elapsed) {
+    const elapsedHours = Math.floor(elapsed / (1000 * 60 * 60));
+    const elapsedDays = Math.floor(elapsed / (1000 * 60 * 60 * 24));
+
+    if (elapsedHours < 1) {
+        return "just now";
+    } else if (elapsedHours < 24) {
+        return `${elapsedHours} hour${elapsedHours > 1 ? 's' : ''} ago`;
+    } else if (elapsedDays === 1) {
+        return "1 day ago";
+    } else {
+        return `${elapsedDays} days ago`;
+    }
+}
+
+
+document.addEventListener("DOMContentLoaded", async function() {
     updateQuotes();
-    updateTimeAgo();
+    await updateTimeAgo();
 
     setInterval(updateCESTTime, 1000);
     updateCESTTime();
