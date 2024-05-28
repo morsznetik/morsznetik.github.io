@@ -27,13 +27,8 @@ p {
 
 .main-content {
     display: flex;
+    flex-direction: column;
     margin: 0;
-}
-
-@media (max-width: 1170px) {
-    .main-content {
-        flex-direction: column;
-    }
 }
 
 .main-content > .container {
