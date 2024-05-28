@@ -1,14 +1,33 @@
-.femboy-text {
+.rainbow-text {
+    background: linear-gradient(
+            300deg,
+            #ffcccc,
+            #ffccff,
+            #ccccff,
+            #ccffff,
+            #ccffcc,
+            #ffffcc,
+            #ffcc99,
+            #ffcccc
+    );
+    background-position: center;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+}
+
+
+.pink-gradient-text {
     background: linear-gradient(75deg, var(--accent-pink), var(--accent-pink-light));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
     font-weight: bold;
 }
-.femboy-glow-light {
+.pink-glow-light {
     text-shadow: 0 0 5px var(--accent-pink);
 }
-.femboy-glow {
+.pink-glow {
     text-shadow: 0 0 10px var(--accent-pink);
 }
 .love-text {
