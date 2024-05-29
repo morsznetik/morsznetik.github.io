@@ -46,3 +46,34 @@
     margin: 0 auto;
     border-radius: 5px;
 }
+.sidebar {
+    width: 200px;
+    padding: 20px;
+    background-color: var(--darker-bg);
+    margin-right: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    display: block;
+    padding: 10px 15px;
+    background-color: var(--accent-pink);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.sidebar ul li a:hover {
+    background-color: var(--accent-pink-light);
+    color: var(--dark-bg);
+}

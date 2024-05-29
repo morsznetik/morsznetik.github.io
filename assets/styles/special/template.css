@@ -79,4 +79,5 @@ footer {
     width: 100%;
     padding: 0 1em;
     background: var(--dark-bg);
+    z-index: 1000;
 }
