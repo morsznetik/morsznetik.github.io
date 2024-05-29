@@ -41,7 +41,25 @@ function updateTimeAgo() {
     });
 }
 
+function expandImage(event) {
+    const modal = document.getElementById("image-modal");
+    const modalImg = document.getElementById("expanded-img");
+    modal.style.display = "block";
+    modalImg.src = event.target.src;
+
+    // Close the modal when the user clicks anywhere outside of the modal
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    }
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     populateSidebar();
     updateTimeAgo();
+
+    document.querySelectorAll('.expand-img').forEach(image => {
+        image.addEventListener('click', expandImage);
+    });
 });

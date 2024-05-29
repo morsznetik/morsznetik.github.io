@@ -64,7 +64,7 @@
 
 .stretched-text {
     display: inline-block;
-    transform: scaleX(1.3) translateX(-3px);;
+    transform: scaleX(1.3) translateX(-5px);;
 }
 
 .no-a-styles:link, .no-a-styles:visited, .no-a-styles:hover, .no-a-styles:active {
