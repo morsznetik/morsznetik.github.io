@@ -147,6 +147,7 @@
 
 .spotify-frame {
     border-radius: 12px;
+    border: none;
 }
 
 .spotify-embed {
