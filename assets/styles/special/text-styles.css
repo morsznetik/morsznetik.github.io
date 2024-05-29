@@ -63,8 +63,8 @@
 }
 
 .stretched-text {
-    display: inline-block; /* Required for transform to work on inline elements */
-    transform: scaleX(1.3); /* Adjust the value to your preference */
+    display: inline-block;
+    transform: scaleX(1.3) translateX(-3px);;
 }
 
 .no-a-styles:link, .no-a-styles:visited, .no-a-styles:hover, .no-a-styles:active {
