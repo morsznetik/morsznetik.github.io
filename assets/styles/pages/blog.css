@@ -1,2 +1,48 @@
 /* Imports */
 @import url('../special/template.css');
+
+
+/* Blog Header Styling */
+.blog-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.blog-header h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.publish-date {
+    font-size: 0.9em;
+    color: var(--accent-pink-light);
+}
+
+/* Main Blog Content Styling */
+.main-blog-content {
+    padding: 20px;
+}
+
+/* Blog Section Styling */
+.blog-section {
+    margin-bottom: 40px;
+}
+
+.blog-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.blog-section p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.blog-section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+}
