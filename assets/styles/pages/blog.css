@@ -1,15 +1,26 @@
 /* Imports */
 @import url('../special/template.css');
 
+.main-content {
+    padding-bottom: 50px;
+}
+
 /* Sidebar Styling */
 .sidebar {
     width: calc(100% - 40px);
     padding: 20px;
     background-color: var(--darker-bg);
     display: flex;
+    justify-content: center;
     margin-bottom: 20px;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+@media screen and (max-width: 700px) {
+    .sidebar {
+        justify-content: normal;
+    }
 }
 
 .sidebar ul {

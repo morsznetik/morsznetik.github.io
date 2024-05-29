@@ -165,7 +165,7 @@
     transition: transform 0.3s;
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 600px) {
     .spotify-embed {
         flex: 1 1 calc(100% - 20px);
         max-width: calc(100% - 20px);
@@ -182,7 +182,7 @@
     font-size: 1.5rem;
 }
 
-@media (max-width: 507px) {
+@media screen and (max-width: 507px) {
     .social-links {
         flex-direction: column;
         max-width: 100%;
@@ -205,7 +205,7 @@
     flex-direction: row;
 }
 
-@media (max-width: 507px) {
+@media screen and (max-width: 507px) {
     .setup-container {
         flex-direction: column;
     }
