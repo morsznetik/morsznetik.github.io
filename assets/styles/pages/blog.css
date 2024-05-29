@@ -91,6 +91,16 @@
     border-radius: 5px;
 }
 
+.blog-container a:link,
+.blog-container a:visited,
+.blog-container a:hover,
+.blog-container a:active {
+    color: inherit;
+    font-weight: 900;
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-pink);
+}
+
 /* Style for modal */
 .modal {
     display: none;
