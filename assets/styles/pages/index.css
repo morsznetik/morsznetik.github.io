@@ -1,11 +1,9 @@
 /* Imports */
 @import url('../special/template.css');
 
-
 .main-content {
-    padding-bottom: 50px;
+    padding-top: 50px;
 }
-
 
 /* Profile Picture Styles */
 .profile-image {
@@ -165,7 +163,7 @@
     transition: transform 0.3s;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
     .spotify-embed {
         flex: 1 1 calc(100% - 20px);
         max-width: calc(100% - 20px);

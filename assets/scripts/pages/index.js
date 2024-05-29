@@ -86,7 +86,7 @@ async function updateLastUpdateWidget() {
         const elapsed = currentTime - lastUpdateTimestamp;
 
         lastUpdateElement.innerText = formatTimeAgo(elapsed);
-        throw error; // Re-throw the error to propagate it to the caller
+        throw error;
     }
 }
 

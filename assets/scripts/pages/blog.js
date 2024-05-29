@@ -20,7 +20,7 @@ function generateSidebarContent() {
     sections.forEach((section) => {
         const sectionId = section.getAttribute("id");
         const sectionTitle = section.querySelector("h1").innerText;
-        sidebarContent += `<li><a href="#${sectionId}">${sectionTitle}</a></li>`;
+        sidebarContent += `<li><a href="#${sectionId}" tabindex="0">${sectionTitle}</a></li>`;
     });
 
     return sidebarContent;
@@ -61,5 +61,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.querySelectorAll('.expand-img').forEach(image => {
         image.addEventListener('click', expandImage);
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const target = document.querySelector(this.getAttribute('href'));
+            const offset = 100; // Adjust the offset here
+            const targetTop = target.getBoundingClientRect().top + window.scrollY;
+
+            window.scrollTo({
+                top: targetTop - offset,
+                behavior: 'smooth'
+            });
+        });
     });
 });

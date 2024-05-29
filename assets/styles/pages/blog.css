@@ -2,18 +2,16 @@
 @import url('../special/template.css');
 
 .main-content {
-    padding-bottom: 50px;
+    padding-top: 50px;
 }
 
 /* Sidebar Styling */
 .sidebar {
     width: calc(100% - 40px);
     padding: 20px;
-    border-top: 1px dotted var(--accent-pink);
-    background-color: var(--darker-bg);
+    background-color: transparent;
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
 }
