@@ -13,9 +13,7 @@ function formatTimeAgo(elapsed) {
     }
 }
 
-
-document.addEventListener("DOMContentLoaded", function() {
-    const sidebarList = document.getElementById("sidebar-list");
+function generateSidebarContent() {
     const sections = document.querySelectorAll(".blog-container");
     let sidebarContent = "";
 
@@ -25,12 +23,25 @@ document.addEventListener("DOMContentLoaded", function() {
         sidebarContent += `<li><a href="#${sectionId}">${sectionTitle}</a></li>`;
     });
 
-    sidebarList.innerHTML = sidebarContent;
+    return sidebarContent;
+}
 
-    // Placeholder for formatTimeAgo function call
+function populateSidebar() {
+    const sidebarList = document.getElementById("sidebar-list");
+    sidebarList.innerHTML = generateSidebarContent();
+}
+
+function updateTimeAgo() {
     const timeAgoElements = document.querySelectorAll('.time-ago');
     timeAgoElements.forEach(element => {
-        const timestamp = parseInt(element.getAttribute('data-timestamp'));
-        element.innerText = formatTimeAgo(timestamp);
+        const timestamp = parseInt(element.getAttribute('data-timestamp'), 10) * 1000;
+        const currentTime = new Date();
+        const elapsed = currentTime - timestamp;
+        element.innerText = formatTimeAgo(elapsed);
     });
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    populateSidebar();
+    updateTimeAgo();
 });
