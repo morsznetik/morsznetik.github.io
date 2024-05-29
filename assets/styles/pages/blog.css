@@ -1,6 +1,38 @@
 /* Imports */
 @import url('../special/template.css');
 
+/* Sidebar Styling */
+.sidebar {
+    width: calc(100% - 40px);
+    padding: 20px;
+    background-color: var(--darker-bg);
+    display: flex;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+.sidebar ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    justify-content: flex-start;
+}
+
+.sidebar ul li {
+    margin-right: 10px;
+}
+
+.sidebar ul li a {
+    display: block;
+    padding: 10px 15px;
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 8px;
+    border: 2px solid var(--accent-pink-light);
+    text-align: center;
+}
 
 /* Blog Header Styling */
 .blog-header {
@@ -45,39 +77,4 @@
     display: block;
     margin: 0 auto;
     border-radius: 5px;
-}
-.sidebar {
-    width: 100%;
-    padding: 20px;
-    background-color: var(--darker-bg);
-    border-bottom: 1px solid var(--accent-pink-light);
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.sidebar ul {
-    display: flex;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.sidebar ul li {
-    margin-right: 10px;
-}
-
-.sidebar ul li a {
-    display: block;
-    padding: 10px 15px;
-    background-color: var(--accent-pink);
-    color: var(--text-color);
-    text-decoration: none;
-    border-radius: 5px;
-    text-align: center;
-}
-
-.sidebar ul li a:hover {
-    background-color: var(--accent-pink-light);
-    color: var(--dark-bg);
 }
