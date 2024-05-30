@@ -7,6 +7,8 @@
     --dark-bg: #202021;
     --darker-bg: #171616;
     --text-color: #ffffff;
+    --accent-purple: #8b5cf6;
+    --accent-purple-pink: #d946ef;
     --accent-pink: #fda199;
     --accent-pink-light: #ffd9d6;
 }
@@ -57,8 +59,8 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .header-text {
