@@ -89,13 +89,13 @@ function expandImage(event) {
                 modalImg.style.height = "";
                 modalImg.style.transition = "";
                 modal.removeEventListener('click', closeModal);
-                window.removeEventListener('scroll', closeModal);
+                window.removeEventListener('wheel', closeModal);
             }, 200);
         }
     };
 
     modal.addEventListener('click', closeModal);
-    window.addEventListener('scroll', closeModal);
+    window.addEventListener('wheel', closeModal);
 }
 
 document.addEventListener("DOMContentLoaded", function() {
