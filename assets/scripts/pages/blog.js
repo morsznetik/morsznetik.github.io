@@ -45,15 +45,57 @@ function expandImage(event) {
     const modal = document.getElementById("image-modal");
     const modalContent = modal.querySelector(".modal-content");
     const modalImg = document.getElementById("expanded-img");
-    modal.style.display = "block";
-    modalImg.src = event.target.src;
 
-    // Close the modal when the user clicks anywhere outside of the modal
-    window.onclick = function(event) {
-        if (event.target === modal || event.target === modalContent || event.target === modalImg) {
-            modal.style.display = "none";
+    const img = event.target;
+    const rect = img.getBoundingClientRect();
+
+    modal.style.display = "block";
+    modalImg.src = img.src;
+
+    modalImg.style.position = "absolute";
+    modalImg.style.top = `${rect.top}px`;
+    modalImg.style.left = `${rect.left}px`;
+    modalImg.style.width = `${rect.width}px`;
+    modalImg.style.height = `${rect.height}px`;
+    modalImg.style.transition = "transform 0.2s ease-in-out, top 0.2s ease-in-out, left 0.2s ease-in-out, width 0.2s ease-in-out, height 0.2s ease-in-out";
+
+    modalImg.offsetHeight;
+
+    const targetWidth = Math.min(window.innerWidth * 0.8, modalImg.naturalWidth);
+    const targetHeight = targetWidth * modalImg.naturalHeight / modalImg.naturalWidth;
+
+    const targetTop = (window.innerHeight - targetHeight) / 2;
+    const targetLeft = (window.innerWidth - targetWidth) / 2;
+
+    modalImg.style.top = `${targetTop}px`;
+    modalImg.style.left = `${targetLeft}px`;
+    modalImg.style.width = `${targetWidth}px`;
+    modalImg.style.height = `${targetHeight}px`;
+    modalImg.style.transform = "translate(0, 0)";
+
+    const closeModal = (e) => {
+        if (e.target === modal || e.target === modalImg || e.target === modalContent) {
+            modalImg.style.top = `${rect.top}px`;
+            modalImg.style.left = `${rect.left}px`;
+            modalImg.style.width = `${rect.width}px`;
+            modalImg.style.height = `${rect.height}px`;
+
+            setTimeout(() => {
+                modal.style.display = "none";
+                modalImg.style.position = "";
+                modalImg.style.top = "";
+                modalImg.style.left = "";
+                modalImg.style.width = "";
+                modalImg.style.height = "";
+                modalImg.style.transition = "";
+                modal.removeEventListener('click', closeModal);
+                window.removeEventListener('scroll', closeModal);
+            }, 200);
         }
-    }
+    };
+
+    modal.addEventListener('click', closeModal);
+    window.addEventListener('scroll', closeModal);
 }
 
 document.addEventListener("DOMContentLoaded", function() {
