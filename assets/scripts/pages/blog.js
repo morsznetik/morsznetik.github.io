@@ -43,13 +43,14 @@ function updateTimeAgo() {
 
 function expandImage(event) {
     const modal = document.getElementById("image-modal");
+    const modalContent = modal.querySelector(".modal-content");
     const modalImg = document.getElementById("expanded-img");
     modal.style.display = "block";
     modalImg.src = event.target.src;
 
     // Close the modal when the user clicks anywhere outside of the modal
     window.onclick = function(event) {
-        if (event.target === modal) {
+        if (event.target === modal || event.target === modalContent || event.target === modalImg) {
             modal.style.display = "none";
         }
     }
@@ -68,11 +69,9 @@ document.addEventListener("DOMContentLoaded", function() {
             e.preventDefault();
 
             const target = document.querySelector(this.getAttribute('href'));
-            const offset = 100; // Adjust the offset here
-            const targetTop = target.getBoundingClientRect().top + window.scrollY;
 
             window.scrollTo({
-                top: targetTop - offset,
+                top: target.getBoundingClientRect().top + window.scrollY - 100,
                 behavior: 'smooth'
             });
         });

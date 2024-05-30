@@ -66,27 +66,28 @@
 }
 
 /* Blog Section Styling */
-.blog-section {
+.blog-container {
     margin-bottom: 40px;
 }
 
-.blog-section h2 {
+.blog-container h2 {
     font-size: 1.8em;
     margin-bottom: 10px;
 }
 
-.blog-section p {
+.blog-container p {
     font-size: 1em;
     line-height: 1.6;
     margin-bottom: 15px;
 }
 
-.blog-section img {
+.blog-container img {
     max-width: 100%;
-    height: auto;
+    max-height: 65vh;
     display: block;
     margin: 0 auto;
     border-radius: 5px;
+    cursor: zoom-in;
 }
 
 .blog-container a:link,
@@ -99,26 +100,31 @@
     border-bottom: 1px dotted var(--accent-pink);
 }
 
-/* Style for modal */
+/* Style for image expand modal */
 .modal {
     display: none;
     position: fixed;
     z-index: 999;
+    padding-top: 60px;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
     overflow: auto;
+    background-color: rgba(0,0,0,0.3);
 }
+
 .modal-content {
     margin: auto;
     display: block;
-    max-width: 50%;
-    max-height: 50%;
+    width: 100%;
+    max-width: 100vh;
 }
+
 .modal-content img {
-    max-width: 100%;
-    max-height: 100%;
-    margin-bottom: 42px;
+    margin: auto;
+    display: block;
+    width: 50vh;
+    height: auto;
+    cursor: zoom-out;
 }
