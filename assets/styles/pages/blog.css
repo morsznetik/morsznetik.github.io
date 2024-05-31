@@ -47,36 +47,36 @@
 /* Blog Header Styling */
 .blog-header {
     text-align: center;
-    margin-bottom: 20px;
 }
 
 .blog-header h1 {
     font-size: 2.5em;
-    margin: 0;
+    margin: 20px !important;
 }
 
 .blog-header-info {
     display: flex;
-    justify-content: space-between;
+    justify-content: center !important;
+    align-items: center;
 }
 
 .publish-date,
 .modified-date {
-    margin: 0;
+    margin: 10px 10px;
     font-size: 0.9em;
     color: var(--accent-pink-light);
 }
 
-/* Main Blog Content Styling */
-.main-blog-content {
-    padding: 20px;
+@media screen and (max-width: 700px) {
+    .blog-header-info {
+        flex-direction: column;
+    }
 }
 
 /* Blog Section Styling */
 .blog-container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
     background-color: transparent;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
